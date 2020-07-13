@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>User List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <!-- navigation -->
+  <nav class="navbar navbar-expand-md navbar-light bg-light justify-content-between">
+    <a class="navbar-brand" href="./index.html">Social</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul id="list-type" class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">All</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">My favorite</a>
+        </li>
+      </ul>
+    </div>
+    <div class="row searchbox mr-2">
+      <form id="search-type" class="form-inline">
+        <div class="my-1">
+          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+          <select class="custom-select mr-sm-2 select-search-type" id="inlineFormCustomSelect">
+            <option value="1">Name</option>
+            <option value="2">Age</option>
+            <option value="3">Region</option>
+          </select>
+        </div>
+      </form>
+      <form id="search" class="form-inline">
+        <input class="form-control mr-sm-2" id="search-input" type="search" placeholder="Search" aria-label="Search...">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <!-- Modal -->
+  <div class="modal fade" id="show-card-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="show-card-body">
+          <div id="show-card-avatar"></div>
+          <div class="modal-body-info mt-2">
+            <ul style="list-style-type:none">
+              <li id="show-card-email"></li>
+              <li id="show-card-region"></li>
+              <li id="show-card-birthday"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" data-id="1">Add favorite</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- data-panel -->
+  <div class="container mt-3">
+    <div id="genderfilter" class="btn-group mb-2" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary btn-gender-all">All</button>
+      <button type="button" class="btn btn-secondary btn-gender-male">
+        <i class="fa fa-mars fa-lg btn-gender-male" aria-hidden="true"></i>
+        Male
+      </button>
+      <button type="button" class="btn btn-secondary btn-gender-female">
+        <i class="fa fa-venus fa-lg btn-gender-female" aria-hidden="true"></i>
+        Female
+      </button>
+    </div>
+    <div class="row" id="data-panel">
+      <!-- print user list here -->
+    </div>
+  </div>
+
+  <!-- pagination -->
+  <nav aria-label="Page navigation">
+    <ul id="pagination" class="pagination justify-content-center">
+    </ul>
+  </nav>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
